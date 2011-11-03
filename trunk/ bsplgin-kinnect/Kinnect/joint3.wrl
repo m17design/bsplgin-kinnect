@@ -1,0 +1,165 @@
+#VRML V2.0 utf8
+
+EXTERNPROTO DeviceSensor [
+	exposedField SFBool enabled
+	exposedField SFString device
+	exposedField SFString eventType
+	eventOut SFNode event
+	eventOut SFBool isActive
+]
+["urn:inet:bitmanagement.de:node:DeviceSensor"]
+
+PROTO  skeletonData[
+	exposedField SFVec3f XN_SKEL_POS_HEAD	0 0 0 
+	exposedField SFVec3f XN_SKEL_POS_NECK	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_TORSO	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_WAIST	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_COLLAR	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_SHOULDER	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_ELBOW	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_WRIST	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_HAND	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_FINGERTIP	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_COLLAR	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_SHOULDER	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_ELBOW	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_WRIST	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_HAND	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_FINGERTIP	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_HIP	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_KNEE	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_ANKLE	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_LEFT_FOOT	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_HIP	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_KNEE	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_ANKLE	0 0 0  
+	exposedField SFVec3f XN_SKEL_POS_RIGHT_FOOT	0 0 0 
+	exposedField SFMatrix XN_SKEL_ORI_HEAD	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+	exposedField SFMatrix XN_SKEL_ORI_NECK	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_TORSO	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_WAIST	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_COLLAR	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_SHOULDER	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_ELBOW	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_WRIST	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_HAND	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_FINGERTIP	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_COLLAR	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_SHOULDER	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_ELBOW	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_WRIST	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_HAND	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_FINGERTIP	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_HIP 	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_KNEE	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_ANKLE	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_LEFT_FOOT	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_HIP	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_KNEE	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_ANKLE	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+	exposedField SFMatrix XN_SKEL_ORI_RIGHT_FOOT	1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 
+]{}
+
+PROTO	skeleton[
+	exposedField	SFBool	enabled TRUE
+	exposedField	SFInt32	status 1
+	exposedField	SFNode	skeletonData skeletonData{}
+]{}
+
+PROTO handsTracks[
+	exposedField	SFBool	enabled TRUE
+	exposedField	SFInt32	status 1
+	exposedField	SFVec3f	firstHandTrack 0 0 0
+	exposedField	SFVec3f	secondHandTrack 0 0 0
+] {}
+
+
+PROTO	KinectDev[
+	exposedField	SFNode	skeleton	skeleton{}
+	exposedField	SFNode	handsTrack	handsTracks{}
+]{ }
+
+
+PROTO JName [	 
+	exposedField MFString string []	 
+	field SFFloat size 0.05
+]
+{
+	Shape {
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Text {string IS string fontStyle FontStyle {
+			justify     "MIDDLE"
+			size IS size
+	    }} }
+}
+DEF kd KinectDev {
+	skeleton DEF skltn skeleton	{}
+	handsTrack DEF  hnz handsTracks	{}
+}
+
+DEF	ds DeviceSensor	{
+	enabled	TRUE
+	device "KinectDev"
+	event USE kd
+}
+
+DEF	 tm TimeSensor {
+loop TRUE
+}
+DEF scr Script	{
+	field SFNode ds USE	ds
+	field SFNode kd USE	kd
+	field  SFNode  skltn USE  skltn
+	field  SFNode  hndz USE	hnz
+	eventIn SFTime	getInfo
+	eventIn	 SFBool	devSwch
+
+	url	"javascript:
+	function getInfo(){
+//		print(kd.toVrmlString());
+		
+	}
+	function devSwch(v){
+		if(v){
+			print('skltn.skeletonData.toVrmlString()'+skltn.skeletonData.toVrmlString());
+			print('hndz.firstHandTrack.toVrmlString()'+hndz.toVrmlString());
+		//		kd.skeleton.enabled=!kd.skeleton.enabled;
+			// 	print('kd.skeleton.enabled is'+kd.skeleton.enabled);
+		}
+	
+	}
+	"
+}
+
+
+ROUTE tm.time TO scr.getInfo
+
+
+DEF	trans Transform	{
+translation	 0 0 -10
+children [
+	DEF	btn Shape {
+		geometry Sphere {
+			radius 0.1
+		}
+		appearance Appearance {
+			material Material {
+				diffuseColor 1 0 0 
+			}
+		}
+	}
+
+	DEF	ts TouchSensor {}
+
+]
+
+}
+
+
+
+ROUTE ts.isActive TO scr.devSwch
+
+
+
+
+
