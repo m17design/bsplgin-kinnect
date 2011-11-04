@@ -5,7 +5,6 @@
 #include <XnCppWrapper.h>
 #include <XnHash.h>
 #include <XnLog.h>
-#include "testSpeech.h"
 // Header for NITE
 #include "XnVNite.h"
 #include "XnVDepthMessage.h"
