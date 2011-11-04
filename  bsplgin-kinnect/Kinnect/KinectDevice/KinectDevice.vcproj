@@ -210,7 +210,7 @@
 			UseOfATL="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="1"
-			ManagedExtensions="1"
+			ManagedExtensions="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -273,6 +273,7 @@
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				TargetMachine="1"
+				CLRUnmanagedCodeCheck="false"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -941,19 +942,6 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\testSpeech.cpp"
-				>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalUsingDirectories="C:\Windows\Microsoft.NET\Framework\v4.0.30319\WPF"
-						CompileAsManaged="1"
 					/>
 				</FileConfiguration>
 			</File>
