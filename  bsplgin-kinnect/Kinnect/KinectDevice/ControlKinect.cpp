@@ -21,6 +21,8 @@ int pix_w;
 int pix_h;
 int lastTrackingStatus=0;
 int lastPlayerStatus=0;
+float lastFloorCtr[3]={0,0,0};
+float lastFloorNml[3]={0,0,0};
 XnStatus Init_Kinect(EventOutSFNode* skltn,EventOutSFNode* hnz,EventOutSFNode* flr){
 	XnStatus rc=XN_STATUS_OK;
 	EnumerationErrors errors;
@@ -99,8 +101,13 @@ VOID SetUserSkeletonData(XnUserID uid){
 			QuerySFNode(g_skltn,ori_field[i],IID_EventInSFMatrix,&matrix);
 			if(!matrix){
 				continue;
-			}
-			matrix->setValue((float*)&(GetSkltnJntOri(uid,joint_names[i]).orientation));
+			}	
+			float* ori_Matrix=GetSkltnJntOri(uid,joint_names[i]).orientation.elements;
+			float save_ori[16]={ori_Matrix[0],-ori_Matrix[3],ori_Matrix[6],0.0, 
+								-ori_Matrix[1],ori_Matrix[4],-ori_Matrix[7],0.0, 
+								ori_Matrix[2],-ori_Matrix[5],ori_Matrix[8],0.0, 
+								0.0,0.0,0.0,1.0};
+			matrix->setValue(save_ori);
 			matrix->Release();
 		}
 	}
@@ -137,17 +144,28 @@ VOID SetUserHandsData(){
 
 
 VOID SetFloorData(){
-	EventInSFVec3f* vec,*vec1;
-	QuerySFNode(g_flr,L"point",IID_EventInSFVec3f,&vec);
-	QuerySFNode(g_flr,L"normal",IID_EventInSFVec3f,&vec1);
 	XnPlane3D plane;
 	XnStatus rc=GetUserFloor(plane);
-	if(SUCCEEDED(rc)){
-		vec->setValue((float*)&(plane.ptPoint));
-		vec1->setValue((float*)&(plane.vNormal));
+	if(rc!=XN_STATUS_OK){return;}
+	if(plane.ptPoint.X!=lastFloorCtr[0]||plane.ptPoint.Y!=lastFloorCtr[1]||plane.ptPoint.Z!=lastFloorCtr[2]){
+		EventInSFVec3f* pt;
+		QuerySFNode(g_flr,L"point",IID_EventInSFVec3f,&pt);
+		pt->setValue((float*)&(plane.ptPoint));
+		pt->Release();
+		lastFloorCtr[0]=plane.ptPoint.X;
+		lastFloorCtr[1]=plane.ptPoint.Y;
+		lastFloorCtr[2]=plane.ptPoint.Z;
 	}
-	vec->Release();
-	vec1->Release();
+	if (plane.vNormal.X!=lastFloorNml[0]||plane.vNormal.Y!=lastFloorNml[1]||plane.vNormal.Z!=lastFloorNml[2])
+	{
+		EventInSFVec3f*nml;
+		QuerySFNode(g_flr,L"normal",IID_EventInSFVec3f,&nml);
+		nml->setValue((float*)&(plane.vNormal));
+		nml->Release();
+		lastFloorNml[0]=plane.vNormal.X;
+		lastFloorNml[1]=plane.vNormal.Y;
+		lastFloorNml[2]=plane.vNormal.Z;
+	}
 }
 void updateKinect(bool enbld_skltn,bool enbld_hnzTrck){	
 	g_context.WaitAndUpdateAll();
